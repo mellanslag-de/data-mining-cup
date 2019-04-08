@@ -1,6 +1,7 @@
 install.packages("devtools")
 devtools::install_github("PhilippPro/tuneRanger")
 library(tuneRanger)
+install.packages("mlr")
 library(mlr)
 library(data.table)
 
@@ -41,7 +42,9 @@ res$model
 
 install.packages("randomForest")
 library(randomForest)
-rfmod1<-randomForest(train$target~.,data=train,ntree=3000,mtry=1,nodesize=2)
+rfmod1<-randomForest(train$target~.,data=train,num.threads=2,verbose=FALSE,
+                     respect.unordered.factors=order,mtry=24,min.node.size=3,
+                     sample.fraction=0.202,num.trees=1e+03,replace=FALSE)
 ?randomForest
 
 #predict und speichern in submission
