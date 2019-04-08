@@ -28,7 +28,7 @@ res =tuneRanger(train.task,
                 measure =list(multiclass.brier),
                 num.trees =3000,
                 num.threads =2,
-                iters =200,
+                iters =70,
                 iters.warmup =30)
 
 res
