@@ -17,8 +17,9 @@ set.seed(42)
 
 train<-train[0:150,]
 
-#ID Code entfernen weil unnötig
+#ID Code entfernen weil nicht benötigt
 train$ID_code<-NULL
+test$ID_code<-NULL
 
 train.task = makeClassifTask(data = train, target ="target")
 makeClassifTask
